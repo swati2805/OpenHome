@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Message Redirect</title>
+</head>
+<body><h1>Open Home</h1><a href='/home'>Go To Dashboard</a>
+<script>
+	var Message = "[[${messageRedirect.message}]]".trim();
+	if(Message != "" && Message != undefined){
+		alert(Message);
+	}
+	var successLink = "[[${messageRedirect.redirect}]]".trim();
+	
+	if(successLink == "")
+		window.location="/";
+	else
+		window.location = ( successLink.startsWith("/")?"":"/" )+successLink;
+	
+</script>
+</body>
+</html>
